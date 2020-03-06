@@ -5,13 +5,16 @@
 </head>
 
 <body>
-    <h1>
-        <p>My Travel Blog</p>
-    </h1>
     <div>
-        {{ posts }}
+        <h1>My Travel Blog</h1>
     </div>
-
+    {% for post in posts %}
+    <div>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    {% endfor %}
 
 </body>
 
